@@ -1,0 +1,5 @@
+{% extends 'base.html' %}{% block body %}<h1>トップ画面</h1><p><a href="{{ url_for('config') }}">設定画面へ</a></p>
+<h2>メールアカウント一覧</h2><table><tr><th>メールアドレス</th><th>ID</th></tr>{% for row in accounts %}<tr><td>{{row.email}}</td><td>{{row.id}}</td></tr>{% endfor %}</table>
+<h2>抽出ルール一覧</h2><table><tr><th>ID</th><th>名前</th><th>説明</th></tr>{% for row in rules %}<tr><td>{{row.id}}</td><td>{{row.name}}</td><td>{{row.description}}</td></tr>{% endfor %}</table>
+<h2>受信メール一覧</h2><table><tr><th>送信元</th><th>宛先</th><th>時刻</th><th>件名</th><th>本文</th></tr>{% for row in messages %}<tr><td>{{row.sender}}</td><td>{{row.recipient}}</td><td>{{row.time}}</td><td>{{row.subject}}</td><td>{{row.body_head}}</td></tr>{% endfor %}</table>
+<h2>新着 OTP 一覧</h2><table><tr><th>ルール</th><th>説明</th><th>OTP</th></tr>{% for row in otps %}<tr><td>{{row.name}}</td><td>{{row.description}}</td><td>{{row.otp}}</td></tr>{% endfor %}</table>{% endblock %}

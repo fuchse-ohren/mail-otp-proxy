@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block body %}<h1>設定画面</h1><ul><li><a href="{{url_for('mail_accounts')}}">メールアカウント設定</a></li><li><a href="{{url_for('extract_rules')}}">抽出ルール設定</a></li><li><a href="{{url_for('api_config')}}">API 設定</a></li></ul><form method="post" action="{{url_for('logout')}}"><button>ログアウト</button></form>{% endblock %}
